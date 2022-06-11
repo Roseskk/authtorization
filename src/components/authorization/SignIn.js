@@ -5,23 +5,10 @@ import {signIn} from "../../app/slice/switch";
 
 
 export default function SignIn() {
-    const [userColor,setUserColor] = useState('bg-red-500');
-    const [passwordColor,setPasswordColor] = useState('bg-red-500');
 
     const switcher = useSelector((state)=>state.switcher.value)
     const dispatch = useDispatch()
 
-    const handleUser=(e)=> {
-        if (e.target.value.length >= 3) {
-            setUserColor('bg-green-500 shadow-2xl')
-        } else {
-            setUserColor('bg-red-500')
-        }
-    }
-
-    const handlePassword=(e)=> {
-        if (validator.isStrongPassword(e.target.value)) setPasswordColor('bg-green-500 shadow-2xl'); else { setPasswordColor('bg-red-500') }
-    }
 
     const handleSwitch=(e)=>{
         dispatch(signIn())
@@ -39,15 +26,13 @@ export default function SignIn() {
                     <div className={'flex items-center gap-5 relative'}>
                         <fieldset className={'relative w-full bg-white rounded flex gap-5 border '}>
                             <legend className={'ml-4 font-montserratRegular text-xxs'}><label className={'opacity-60'}>Username</label></legend>
-                            <input onChange={handleUser}  className={'w-full h-10 border-none focus:outline-none focus:ring-0 rounded pl-4 pr-4'} placeholder={''} type={'text'}/>
-                            <div className={`absolute rounded-full ${userColor} transition ease-in-out delay-500  w-2 h-2 items-center flex justify-center -top-2 right-0`}> </div>
+                            <input className={'w-full h-10 border-none focus:outline-none focus:ring-0 rounded pl-4 pr-4'} placeholder={''} type={'text'}/>
                         </fieldset>
                     </div>
                     <div className={'flex items-center gap-5 relative'}>
                         <fieldset className={'relative w-full bg-white rounded flex gap-5 border '}>
                             <legend className={'ml-4 font-montserratRegular text-xxs'}><label className={'opacity-60'}>Password</label></legend>
-                            <input onChange={handlePassword}  className={'w-full h-10 border-none focus:outline-none focus:ring-0 rounded pl-4 pr-4'} placeholder={''} type={'password'}/>
-                            <div className={`absolute rounded-full ${passwordColor} transition ease-in-out delay-500  w-2 h-2 items-center flex justify-center -top-2 right-0`}> </div>
+                            <input   className={'w-full h-10 border-none focus:outline-none focus:ring-0 rounded pl-4 pr-4'} placeholder={''} type={'password'}/>
                         </fieldset>
                     </div>
                 </div>

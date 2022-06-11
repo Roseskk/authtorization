@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="396c5b76-a453-4b6d-a94a-11328ccf6419" name="Changes" comment="Tailwind form">
-      <change afterPath="$PROJECT_DIR$/src/app/slice/switch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/authorization/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/authorization/Registration.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/authorization/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/authorization/SignIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +70,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654588689689</updated>
-      <workItem from="1654588692120" duration="29125000" />
+      <workItem from="1654588692120" duration="29724000" />
     </task>
     <task id="LOCAL-00001" summary="Tailwind form">
       <created>1654697268423</created>
@@ -87,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654697268423</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Tailwind form">
+      <created>1654941726493</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654941726493</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
