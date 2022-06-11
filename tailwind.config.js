@@ -23,6 +23,9 @@ module.exports = {
       boxShadow: {
         'form': '0 0 10px rgba(1,1,122,1)',
       },
+      translate: {
+        '30': '30rem',
+      },
       fontFamily: {
         montserratThin: ['Montserrat-Thin'],
         montserratRegular: ['Montserrat-Regular'],

@@ -1,13 +1,16 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import validator from "validator/es";
+import {useDispatch, useSelector} from "react-redux";
+import {signIn} from "../../app/slice/switch";
 
 export default function Registration() {
     const [userColor,setUserColor] = useState('bg-red-500');
     const [emailColor,setEmailColor] = useState('bg-red-500');
     const [loginColor,setLoginColor] = useState('bg-red-500');
     const [passwordColor,setPasswordColor] = useState('bg-red-500');
-    const [formColor,setFormColor] = useState('opacity-20');
 
+    const switcher = useSelector((state)=>state.switcher.value)
+    const dispatch = useDispatch()
 
     const handleUser=(e)=> {
         if (e.target.value.length >= 3) {
@@ -27,15 +30,19 @@ export default function Registration() {
     }
     const handleFormColor=(e)=> {
         e.preventDefault()
-        if (userColor.includes('green') && emailColor.includes('green') && loginColor.includes('green') && passwordColor.includes('green')) console.log('send'); else console.log('decline')}
+        if (userColor.includes('green') && emailColor.includes('green') && loginColor.includes('green') && passwordColor.includes('green')) console.log('send'); else console.log('decline')
+    }
 
-
+    const handleSwitch=(e)=>{
+        dispatch(signIn())
+        console.log(switcher)
+    }
 
     return(
-        <div className={'absolute w-form  h-form rounded bg-gray-50 overflow-hidden '}>
-            <div className={'p-6 overflow-hidden bg-form bg-cover relative  flex items-center justify-center overflow-hidden'}>
-                <span className={'text-4xl opacity-90 text-white font-montserratRegular'}>Registration</span>
-                <div className={''}></div>
+        <div className={`${switcher ? 'translate-x-0': 'translate-x-30'} absolute w-form  h-form rounded bg-gray-50  overflow-hidden transition ease-in-out delay-500 `}>
+            <div className={'mt-2 overflow-hidden  relative  flex items-center justify-center overflow-hidden'}>
+                <span className={'text-4xl opacity-90 text-gray-500 font-montserratThin tracking-widest'}>Registration</span>
+                <div className={''}>{switcher}</div>
             </div>
             <form onSubmit={handleFormColor} className={'flex  w-full gap-2 p-3 mt-2 '}>
                 <div className={'flex flex-col w-3/4'}>
@@ -72,6 +79,9 @@ export default function Registration() {
                     <button disabled={(userColor.includes('green') && emailColor.includes('green') && loginColor.includes('green') && passwordColor.includes('green')) ? false : true} className={'w-full h-full text-2xl font-montserratBold text-white items-center justify-center flex flex-col gap-3'}><span>S</span><span>E</span><span>N</span><span>D</span></button>
                 </div>
             </form>
+            <div className={'flex items-center justify-center'}>
+                <button onClick={handleSwitch} className={'text-gray-500 text-base font-montserratRegular'}>Sign In &rarr;</button>
+            </div>
         </div>
     )
 }
